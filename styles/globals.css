@@ -8,8 +8,17 @@
   box-sizing: border-box;
 }
 
+*:focus,
+*:focus-visible {
+  border: none;
+  outline: none;
+  outline: 2px solid var(--text-color);
+}
+
 body {
   margin: 0;
+  font-family: var(--font-family), monospace, sans-serif;
+  font-variation-settings: 'wght' var(--font-weight-content);
 }
 
 h1,

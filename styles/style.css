@@ -11,6 +11,299 @@
 */
 
 .page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 100px;
+  padding-block: 100px;
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.size_section {
+  inline-size: var(--section-width);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--border-color);
+  background: var(--bg-color);
+  font-family: var(--font-family-accent), monospace, sans-serif;
+  padding-block: var(--header-padding-block);
+}
+
+.logo {
+  display: block;
+  font-size: var(--header-font-size-logo);
+  text-transform: uppercase;
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.header_title {
+  font-size: var(--header-font-size-title);
+  text-transform: uppercase;
+  color: var(--text-color);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.content__card {
+  background: var(--bg-color);
+  border: 2px solid var(--border-color);
+}
+
+.content__card_title {
+  padding: 5px 10px;
+  font-variation-settings: 'wght' var(--font-weight-title);
+  font-size: var(--font-size-content);
+  color: var(--text-color);
+}
+
+.content__card_section_img_lable {
+  position: absolute;
+  top: 25px;
+  right: var(--lable-padding-inline-right);
+  color: var(--text-color);
+  font-family: var(--font-family-accent), monospace, sans-serif;
+  text-transform: uppercase;
+  font-size: var(--font-size-accent);
+  text-shadow: 1px 1px var(--bg-color),
+              -1px -1px var(--bg-color) ;
+  mix-blend-mode: hard-light;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.content__card:nth-child(n+4) .content__card_section_img_lable {
+  text-transform: lowercase;
+}
+
+@supports ((text-stroke: 1px var(--bg-color)) or (-webkit-text-stroke: 1px var(--bg-color))) {
+  .content__card_section_img_lable {
+    -webkit-text-stroke: 1px var(--bg-color);
+    text-stroke: 1px var(--bg-color);
+    text-shadow: none;
+  }
+}
+
+.content__card_section-img {
+  position: relative;
+  max-inline-size: var(--section-width);
+}
+
+.content__card_img {
+  inline-size: 100%;
+  object-fit: cover;
+  aspect-ratio: 1/1;
+}
+
+.content__card_section_text-block {
+  padding: 25px;
+}
+
+.content_description_text {
+  padding-block-end: 25px;
+  font-size: var(--font-size-content);
+  line-height: 117%;
+  color: var(--text-color);
+}
+
+.content_description_text:first-child {
+  padding-block-end: 27px;
+}
+
+.content__card_button_section {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 6px;
+}
+
+.button,
+.card__like-button {
+  position: relative;
+  border: 2px solid var(--border-color);
+  padding: 9px 17px;
+  background-color: var(--bg-color);
+  min-inline-size: 130px;
+  cursor: pointer;
+  font-family: var(--font-family-accent), monospace, sans-serif;
+  font-size: var(--font-size-accent);
+  line-height: 90%;
+  white-space: nowrap;
+  min-block-size: 38px;
+}
+
+.card__icon-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  background-color: var(--bg-color);
+  border: 2px solid transparent;
+  max-block-size: var(--block-size-button);
+  inline-size: var(--block-size-button);
+}
+
+.like-icon {
+  min-inline-size: 27px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.card__icon-button:focus-visible {
+  border-color: var(--border-color);
+  transition: border-color 0.3s ease;
+}
+
+.button_save {
+  max-inline-size: var(--inline-size-button-save);
+  padding: 15px 20px;
+}
+
+.save-icon {
+  mix-blend-mode: difference;
+  inline-size: var(--icon-save-size);
+  flex-shrink: 0;
+  fill: var(--bg-color);
+}
+
+.button_save .button__text {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.decor_saturation {
+  filter: saturate(30%);
+}
+
+.content__card:nth-child(2)  .decor_saturation {
+  filter: saturate(4.5);
+}
+
+.decor_contrast {
+  filter: contrast(200%);
+}
+
+.decor_sepia {
+  filter: sepia(0.9);
+}
+
+.decor_brightness {
+  filter: brightness(40%);
+}
+
+.decor_invert {
+  filter: invert(20%);
+}
+
+.decor_blur {
+  filter: blur(5px);
+}
+
+.decor_more-filter {
+  filter: blur(3px)
+          brightness(1.3)
+          contrast(1.3)
+          grayscale(0.55)
+          hue-rotate(45deg)
+          invert(0.19)
+          opacity(0.83)
+          saturate(3.3)
+          sepia(0.41);
+}
+
+.popup_style:not([open]) {
+  pointer-events: none;
+  opacity: 0;
+}
+
+.popup_style {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  grid-template-columns: var(--size-save-icon-popup) calc(100% - var(--size-save-icon-popup));
+  row-gap: 30px;
+  column-gap: 20px;
+  max-inline-size: var(--size-popup);
+  background-color: var(--bg-color);
+  padding: 30px var(--padding-popup-inline);
+  align-items: center;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.popup_style::backdrop {
+  background: rgb(0, 0, 0, 0.75);
+}
+
+.popup_style .popup_text {
+  font-family: var(--font-family-accent), monospace, sans-serif;
+  font-size:var(--font-size-accent);
+  white-space: wrap;
+  line-height: 150%;
+  text-transform: uppercase;
+}
+
+.popup_style .save-icon {
+  inline-size: var(--size-icon-popup);
+}
+
+.popup_style .button {
+  grid-column: span 2 ;
+  padding: 9px 17px;
+  text-transform: uppercase;
+}
+
+.button:focus-visible {
+  outline: none;
+  box-shadow: 2px 2px 0 0 var(--text-color);
+  transition: box-shadow 0.3s ease;
+}
+
+.button__text,
+.button__popup-text {
+    color: var(--bg-color);
+    mix-blend-mode: difference;
+    position: relative;
+    z-index: 1;
+}
+
+.button {
+  position: relative;
+  overflow: hidden;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--text-color);
+  translate: -100% 0%;
+  transition: translate 0.5s ease-in-out;
+}
+
+.button:hover::before {
+  translate: 0% 0%;
+  transition: translate 0.5s ease-in-out;
+}
+
+@media (width <= 376px) {
+  .button_save .button__text {
+    flex-direction: column;
+  }
 }

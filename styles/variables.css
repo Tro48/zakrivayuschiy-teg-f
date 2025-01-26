@@ -33,7 +33,7 @@
 
 
 @media (width <= 376px) {
-    :root{
+    :root {
         --section-width: 100%;
         --inline-size-button-save: 306px;
         --icon-save-size: 28px;

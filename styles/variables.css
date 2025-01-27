@@ -18,10 +18,10 @@
     --lable-padding-inline-right: clamp(0.813rem, 0.548rem + 1.127vw, 1.563rem);
     --inline-size-button-save: 335px;
     --icon-save-size: 21px;
-    --bg-image: url("../images/background.png"),
-        repeating-linear-gradient(to right, #d3d3d3, transparent 2px),
-        repeating-linear-gradient(to bottom, #d3d3d3, transparent 2px),
-        linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
+    --bg-image:
+        repeating-linear-gradient(to right, #d3d3d3 0 2px, transparent 2px 4px),
+        repeating-linear-gradient(to bottom, #d3d3d3 0 2px, transparent 2px 4px),
+        linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a 100%);
     --size-icon-popup: 39px;
     --size-popup: clamp(21.313rem, 21.048rem + 1.127vw, 22.063rem);
     --padding-popup-inline: clamp(2.5rem, 2.72rem + -0.939vw, 1.875rem);

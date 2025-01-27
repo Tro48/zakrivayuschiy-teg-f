@@ -244,6 +244,7 @@
   background-color: var(--bg-color);
   padding: 30px var(--padding-popup-inline);
   align-items: center;
+
   transition: opacity 0.3s ease-in-out;
 }
 
@@ -263,10 +264,14 @@
   inline-size: var(--size-icon-popup);
 }
 
-.popup_style .button {
+.popup_style .popup_form {
   grid-column: span 2 ;
+}
+
+.popup_style .button {
   padding: 9px 17px;
   text-transform: uppercase;
+  inline-size: 100%;
 }
 
 .button:focus-visible {

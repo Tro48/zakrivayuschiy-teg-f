@@ -11,7 +11,7 @@
 *:focus,
 *:focus-visible {
   border: none;
-  outline: 2px solid var(--text-color);
+  outline: none;
 }
 
 body {
@@ -36,6 +36,10 @@ li {
 
 a {
   color: inherit;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--text-color);;
 }
 
 button,

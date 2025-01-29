@@ -24,7 +24,7 @@
         linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a 100%);
     --size-icon-popup: 39px;
     --size-popup: clamp(21.313rem, 21.048rem + 1.127vw, 22.063rem);
-    --padding-popup-inline: clamp(2.5rem, 2.72rem + -0.939vw, 1.875rem);
+    --padding-popup-inline: 30px;
     --color-heart-contour: #000;
     --color-heart-fill: #FF0000;
 
@@ -37,5 +37,6 @@
         --section-width: 100%;
         --inline-size-button-save: 306px;
         --icon-save-size: 28px;
+        --padding-popup-inline: 40px;
     }
 }

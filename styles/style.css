@@ -139,6 +139,7 @@
 
 .button {
   position: relative;
+  overflow: hidden;
   border: 2px solid var(--border-color);
   padding: 9px 17px;
   background-color: var(--bg-color);
@@ -289,11 +290,6 @@
     mix-blend-mode: difference;
     position: relative;
     z-index: 1;
-}
-
-.button {
-  position: relative;
-  overflow: hidden;
 }
 
 .button::before {
